@@ -1,14 +1,42 @@
 {
-  "name": "docker_web_app",
+  "name": "Ita Airways Virtual Discord Bot",
   "version": "1.0.0",
-  "description": "Node.js on Docker",
-  "author": "First Last <first.last@example.com>",
-  "main": "server.js",
-  "private": true,
-  "scripts": {
-    "start": "node server.js"
-  },
+  "description": "Discord Bot for Ita Airways Virtual",
+  "author": "Luca F <luca@ahd-creative.agency>",
+  "license": "AGPLv3",
   "dependencies": {
-    "express": "^4.16.1"
+    "@elastic/ecs-winston-format": "^1.1.0",
+    "@octokit/request": "^6.2.3",
+    "agenda": "^5.0.0",
+    "bad-words": "^3.0.4",
+    "cowsay": "^1.5.0",
+    "discord.js": "^14.0.3",
+    "elastic-apm-node": "^3.17.0",
+    "express": "^4.17.3",
+    "jsdom": "^21.1.0",
+    "moment": "^2.29.3",
+    "mongoose": "^6.3.1",
+    "node-fetch": "^2.6.7",
+    "winston": "^3.3.4"
+  },
+  "devDependencies": {
+    "@flybywiresim/eslint-config": "^0.1.0",
+    "@types/jsdom": "^21.1.0",
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "dotenv": "^16.0.0",
+    "eslint": "^7.29.0",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "build:typescript": "tsc",
+    "run:node": "node build/index.js",
+    "dev": "nodemon --watch src/ -e ts --exec ts-node src/index.ts",
+    "run": "npm run build:typescript && npm run run:node",
+    "lint": "eslint src/**/**/*.ts",
+    "lint-fix": "eslint src/**/**/*.ts --fix"
   }
 }
